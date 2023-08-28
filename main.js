@@ -2,12 +2,26 @@ const canvas = document.querySelector('.canvas');
 let ifRainbow = true;
 let eraser = false;
 let grid = 16;
+let temp;
 
 const colorButton = document.querySelector('.color');
 const rainbowButton = document.querySelector('.rainbow');
 const eraserButton = document.querySelector('.eraser');
 const clearButton = document.querySelector('.clear');
+const gridButton = document.querySelector('.grid');
 const btns = document.querySelectorAll('.btn');
+
+gridButton.onclick = function () {
+    do {
+        temp = prompt('Provide a 1-100 gird: ');
+        temp = Number(temp);
+        if (temp >= 1 && temp <= 100) {
+            grid = temp;
+            makeCanvas(grid);
+            break
+        }
+    } while(true);
+};
 
 colorButton.addEventListener('click', () => {ifRainbow = false; eraser = false; cssButtonToggle(colorButton)})
 rainbowButton.addEventListener('click', () => {ifRainbow = true; eraser = false; cssButtonToggle(rainbowButton)})
@@ -28,6 +42,7 @@ function clear() {
 };
 
 function makeCanvas(gridValue) {
+    canvas.replaceChildren();
 
     for (let i = 0; i < gridValue; i++) {
 

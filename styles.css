@@ -55,3 +55,9 @@
     flex: 1;
     border: 1px hsla(0, 0%, 0%, 0.3) solid;
 }
+
+.gridRadiusInputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

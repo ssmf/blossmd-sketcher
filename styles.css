@@ -40,6 +40,11 @@
     font-weight: 300;
 }
 
+.activated {
+    background-color: black;
+    color: white;
+}
+
 .column {
     flex: 1;
     display: flex;
